@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Flex 布局</title>
+		<link rel="preconnect">
+		<style>
+			body{
+				margin: 0;
+				height: 100vh;
+				background-color:#eee ;
+				/*设置背景渐变色*/
+				background: -webkit-linear-gradient(left,#34C2A9,#6CD559);
+				
+			}
+			.flex{
+				display: flex;
+			}
+			.baiSe{
+				background-color: white;
+				box-shadow: 1px 2px 1px #888888
+				
+			}
+			/*设置头部尾部的左右外边距*/
+			.jli{
+			margin: 0 8px;
+			}
+			.flex1{
+				flex: 1;
+			}
+			.column{
+				flex-direction: column;
+				height: 1000px;
+				
+			}
+			.mg8{
+				margin: 8px;
+			}
+			.mgr8{
+				margin-right: 8px;
+			}
+			.mgt8{
+				margin-top: 8px;
+			}
+			.daohang{
+				padding: 10px 20px;
+				border-bottom: 1px solid grey;
+				font-size: 14px;
+				color: #666;
+				background:gainsboro;
+			}/*媒体查询，控制窗口显示内容*/
+			@media(max-width:600px){
+				.ceBian{
+					display: none;
+				}
+				.neRong{
+					flex-direction: column;
+				}
+				.shuJuQu{
+					flex-direction: column;
+				}
+				.youQu{
+					margin-left: 8px;
+				}
+				.shuJu{
+					margin: 0 0 8px;
+					flex: auto;
+				}
+			}
+			.neRong::-webkit-scrollbar{
+				display: none;
+			}
+			
+		</style>
+	</head>
+	<body class="flex">
+		<!--主区域-->
+		<div class="flex1 flex column">
+			<!--头部栏-->
+			<div style="height: 60px; z-index: 1;" class="baiSe jli"></div>
+			<!--内容区域-->
+			<div style="overflow: auto;" class="neRong flex1 flex">
+				<!--左区-->
+				<div style="flex: 3;" class="flex column mg8">
+					<!--数据区-->
+					<div class="flex shuJuQu" style="margin-bottom: 8px;">
+						<!--数据块-->
+						<div style="height: 300px;" class="shuJu flex1 baiSe mgr8"></div>
+						<div style="height: 300px;" class="shuJu flex1 baiSe "></div>
+					</div>
+					<div class="flex shuJuQu" style="margin-bottom: 8px;">
+						<!--数据块-->
+						<div style="height: 300px;" class="shuJu flex1 baiSe mgr8"></div>
+						<div style="height: 300px;" class="shuJu flex1 baiSe "></div>
+					</div>
+					<div class="flex shuJuQu">
+						<!--数据块-->
+						<div style="height: 300px;" class="shuJu flex1 baiSe mgr8"></div>
+						<div style="height: 300px;" class="shuJu flex1 baiSe mgr8"></div>
+						<div style="height: 300px;" class="shuJu flex1 baiSe mgr8"></div>
+						<div style="height: 300px;" class="shuJu flex1 baiSe "></div>
+					</div>
+					<!--列表区-->
+					<div>
+						<!--列表项-->
+						<div style="height: 160px; margin-bottom: 8px;" class="baiSe mgt8"></div>
+					</div>
+				</div>
+				<!--右区-->
+				<div style="flex: 1; margin-right: 8px;" class="youQu flex column  mgt8">
+					<!--提示区-->
+					<div style="height: 200px;" class="baiSe"></div>
+					<!--消息区-->
+					<div style="height: 350px;" class="baiSe mgt8"></div>
+					<!--网页信息区域-->
+					<div style="height: 550px;" class="baiSe mgt8"></div>
+				</div>
+			</div>
+			<div style="height: 120px;" class="baiSe jli"></div>
+		</div>
+	</body>
+</html>
